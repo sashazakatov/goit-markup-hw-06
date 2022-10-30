@@ -434,25 +434,38 @@
             <div class="modal-field">
               <label class="modal-ladel">Ім'я</label>
               <input type="text" name="user-name" class="modal-input">
+              <svg width="18" height="18" class="modal-icon">
+                <use href="./images/icons.svg#person-icon"></use>
+              </svg>
             </div>
             <div class="modal-field">
               <label for="tel" class="modal-ladel">Телефон</label>
               <input type="text" name="user-tel" id="tel" class="modal-input">
+              <svg width="18" height="18" class="modal-icon">
+                <use href="./images/icons.svg#phone-icon"></use>
+              </svg>
             </div>
             <div class="modal-field">
               <label for="email" class="modal-ladel">Пошта</label>
               <input type="email" name="user-email" id="email" class="modal-input">
+              <svg width="18" height="18" class="modal-icon">
+                <use href="./images/icons.svg#email-icon"></use>
+              </svg>
             </div>
             <div class="modal-field">
               <label for="comment" class="modal-ladel">Коментар</label>
               <textarea name="user-comment" id="comment" class="modal-input" placeholder="Введіть текст"></textarea>
             </div>
             <div class="modal-checkbox">
-              <input type="checkbox" name="contract" id="contract" class="visually-hidden">
-              <label for="contract" class="">
+              <input type="checkbox" name="contract" id="contract" class="checkbox-input visually-hidden">
+              </label>
+              <svg width="16" height="15" class="checkbox-icon">
+                <use href="./images/icons.svg#check-icon"></use>
+              </svg>
+              <label for="contract" class="checkbox-label"> 
                 Погоджуюся з розсилкою та приймаю
               </label>
-              <a class="modal-link">Умови договору</a>
+                <a href="" class="modal-link">Умови договору</a>
             </div>
             <button type="submit" class="modal-buttom">Відправити</button>
           </form>

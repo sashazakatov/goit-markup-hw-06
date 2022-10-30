@@ -65,8 +65,6 @@ ul
 
     padding-left: 15px;
     padding-right: 15px;
-
-    /* outline: 1px solid red; */
 }
 /* list */
 .list {
@@ -97,6 +95,8 @@ ul
 
 /* button */
 .button {
+    cursor: pointer;
+
     transition-property:color, background-color, box-shadow;
     transition-duration: 250ms;
     transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
@@ -695,6 +695,10 @@ ul
 /* Modal */
 .backdoor{
     position: fixed;
+    opacity: 1;
+    transition-property: opacity, visibility;
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 
     left: 0px;
     top: 0px;
@@ -703,8 +707,16 @@ ul
 
     background-color: rgba(0, 0, 0, 0.2);
 }
+.backdoor.is-hidden
+{
+    opacity: 0;
+}
 .modal{
     position: absolute;
+
+    transition-property: border-color;
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 
     top: 50%;
     left: 50%;
@@ -718,27 +730,37 @@ ul
 
     background-color: var(--background-color);
 }
-.close-buttom{
+.close-buttom {
     display: flex;
     align-items: center;
     justify-content: center;
 
+    transition-property: fill;
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+
     position: absolute;
     right: 8px;
-    top:8px;
+    top: 8px;
 
     border-radius: 50%;
 
     width: 30px;
     height: 30px;
     background-color: var(--background-color);
-    border:1px solid rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+}
+.close-buttom:hover,
+.close-buttom:focus{
+    fill: var(--company-color);
+    cursor: pointer;
 }
 .is-hidden{
     opacity: 0;
     pointer-events: none;
     visibility: hidden;
 }
+
 /* Modal form */
 .modal-form{
     margin: 40px;
@@ -764,8 +786,11 @@ ul
     font-size: 12px;
     line-height: 1.16;
     letter-spacing: 0.01em;
+
+    cursor: pointer;
 }
 .modal-input{
+
     padding: 11px 11px 11px 32px;
 
     width: 100%;
@@ -775,16 +800,44 @@ ul
     border: 1px solid rgba(33, 33, 33, 0.2);
     border-radius: 4px;
     outline: none;
+
+    cursor: pointer;
 }
-.modal-input::placeholder{
-    font-size: 12px;
-    line-height: 1.16;
-    letter-spacing: 0.01em;
+.modal-input{
+    transition-property: border-color;
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+.modal-icon {
+    transition-property: fill;
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+
+    position: absolute;
+    left: 12px;
+    top: 28px;
+
+    cursor: pointer;
+}
+.modal-input:hover,
+.modal-input:focus
+{
+    border-color: var(--company-color);
+}
+.modal-input:hover ~ .modal-icon,
+.modal-input:focus~.modal-icon
+{
+    fill:var(--company-color);  
 }
 textarea[class="modal-input"]{
     resize: none;
     height: 120px;
     margin-bottom: 10px;
+}
+.modal-input::placeholder {
+    font-size: 12px;
+    line-height: 1.16;
+    letter-spacing: 0.01em;
 }
 .modal-checkbox{
     position: relative;
@@ -793,7 +846,8 @@ textarea[class="modal-input"]{
 }
 .modal-link{
     color: var(--company-color);
-    
+    cursor: pointer;
+
 }
 .modal-buttom{
     display: block;
@@ -818,11 +872,6 @@ textarea[class="modal-input"]{
 
     border: none;
     border-radius: 4px;
-}
-.modal-icon{
-    position: absolute;
-    left: 12px;
-    top: 28px;
 }
 .checkbox-icon{
     position: absolute;

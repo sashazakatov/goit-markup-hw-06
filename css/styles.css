@@ -886,4 +886,5 @@ textarea[class="modal-input"]{
 }
 .checkbox-input:checked + .checkbox-icon{
     background-color: var(--company-color);
+    border: none;
 }
